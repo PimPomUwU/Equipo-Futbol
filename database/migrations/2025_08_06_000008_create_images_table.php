@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('images', function (Blueprint $table) {
             $table->id();
+            $table->enum('type', ['team','player']);
+            $table->unsignedBigInteger('entity_id');
+            $table->string('url');
             $table->timestamps();
         });
     }
